@@ -16,6 +16,8 @@
 -r:'/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll'
 -r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEditor.Graphs.dll'
 -r:'/Applications/Unity/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll'
+-r:'Assets/ApiAiSDK/lib/fastJSON.dll'
+-r:'Assets/ApiAiSDK/lib/ApiAiSDK.dll'
 -define:UNITY_5_3_OR_NEWER
 -define:UNITY_5_4_OR_NEWER
 -define:UNITY_5_4_1
@@ -93,7 +95,6 @@
 -define:UNITY_EDITOR
 -define:UNITY_EDITOR_64
 -define:UNITY_EDITOR_OSX
--define:UNITY_TEAM_LICENSE
 'Assets/JSON/Editor/JSONChecker.cs'
 -r:'/Applications/Unity/Unity.app/Contents/Mono/lib/mono/2.0/System.Runtime.Serialization.dll'
 -r:'/Applications/Unity/Unity.app/Contents/Mono/lib/mono/2.0/System.Xml.Linq.dll'
