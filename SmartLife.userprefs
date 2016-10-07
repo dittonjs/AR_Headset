@@ -1,0 +1,15 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/WeatherScript.cs">
+    <Files>
+      <File FileName="Assets/GoogleMaps/Scripts/GoogleMap.cs" Line="27" Column="21" />
+      <File FileName="Assets/GoogleMaps/README.txt" Line="16" Column="55" />
+      <File FileName="Assets/scripts/TimeScript.cs" Line="3" Column="14" />
+      <File FileName="Assets/scripts/WeatherScript.cs" Line="24" Column="41" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
