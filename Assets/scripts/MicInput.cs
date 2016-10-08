@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using System;
+using System.Text;
 public class MicInput : MonoBehaviour {
 	AudioClip clip;
 	void Start() {
@@ -18,11 +19,12 @@ public class MicInput : MonoBehaviour {
 		yield return new WaitForSeconds (2);
 		string url = Application.persistentDataPath + "/myvoice.wav";
 		Debug.Log (url);
-		WWW audioloader = new WWW (url);
+		WWW audioloader = new WWW ("file:///"+url);
 		Debug.Log ("SAVING");
+		byte[] bytes = Encoding.ASCII.GetBytes (audioloader.text);
+		string encodedText = Convert.ToBase64String (bytes);
 		yield return audioloader;
-		Debug.Log(audioloader.audioClip.name);
-//		Debug.Log("did i break?");
-//		aud.Play();	
+		aud.clip = audioloader.GetAudioClip (false, false, AudioType.WAV);
+		aud.Play();	
 	}
 }
