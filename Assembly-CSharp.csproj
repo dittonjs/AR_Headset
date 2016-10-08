@@ -53,9 +53,11 @@
      <Compile Include="Assets\scripts\HotelData.cs" />
      <Compile Include="Assets\scripts\MapScript.cs" />
      <Compile Include="Assets\scripts\MicInput.cs" />
+     <Compile Include="Assets\scripts\Opening.cs" />
      <Compile Include="Assets\scripts\SaveWav.cs" />
      <Compile Include="Assets\scripts\Screen2.cs" />
      <Compile Include="Assets\scripts\Screen3.cs" />
+     <Compile Include="Assets\scripts\TextToSpeech.cs" />
      <Compile Include="Assets\scripts\TimeScript.cs" />
      <Compile Include="Assets\scripts\UIStateScript.cs" />
      <Compile Include="Assets\scripts\WeatherScript.cs" />
