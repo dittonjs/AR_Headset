@@ -4,12 +4,23 @@ using UnityEngine.UI;
 
 public class WeatherScript : MonoBehaviour {
 	public Text weatherText;
-
+	RectTransform rect;
 	void Awake () {
 		Debug.Log ("HERE");
+		rect = weatherText.GetComponent<RectTransform> ();
 		string url = "api.openweathermap.org/data/2.5/weather?zip=84321&APPID=4eac3f75191b45b083f1b27d84ba634a";
 		WWW www = new WWW(url);
 		StartCoroutine(WaitForRequest(www));
+	}
+	void Update(){
+		float y;
+		if (UIStateScript.uiState == "MAIN") {
+			y = -390f;
+
+		} else {
+			y = 2000f;
+		}
+		rect.anchoredPosition = new Vector2 (rect.anchoredPosition.x, y);
 	}
 
 	IEnumerator WaitForRequest(WWW www)
