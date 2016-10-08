@@ -25,11 +25,11 @@ public class HotelData : MonoBehaviour
 		{
 
 			JSONObject data = new JSONObject (www.text);
-			Debug.Log (data);
+//			Debug.Log (data);
 
-//			hotelName = data.GetField ("results")[0].GetField ("fare").GetField ("total_price").ToString();
-//			hotelPrice = data.GetField ("results")[0].GetField ("itineraries")[0].GetField ("outbound").GetField ("flights")[0].GetField ("origin").GetField("airport").ToString();
-//			hotelRating = data.GetField ("results")[0].GetField ("itineraries")[0].GetField ("outbound").GetField ("flights")[0].GetField ("origin").GetField("terminal").ToString();
+			hotelName = data.GetField ("results")[0].GetField ("property_name").ToString();
+			hotelPrice = data.GetField ("results")[0].GetField ("total_price").GetField ("amount").ToString();
+			hotelRating = data.GetField ("results")[0].GetField ("awards")[0].GetField ("rating").ToString();
 
 		} else {
 			Debug.Log("WWW Error: "+ www.error);
