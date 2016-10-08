@@ -85,11 +85,12 @@
 -define:UNITY_EDITOR_64
 -define:UNITY_EDITOR_OSX
 -define:UNITY_TEAM_LICENSE
-'Assets/Examples/ApiAiModule.cs'
 'Assets/GoogleMaps/Scripts/GoogleMap.cs'
 'Assets/JSON/JSONObject.cs'
 'Assets/JSON/JSONTemplates.cs'
 'Assets/JSON/VectorTemplates.cs'
+'Assets/scripts/MicInput.cs'
+'Assets/scripts/SaveWav.cs'
 'Assets/scripts/TimeScript.cs'
 'Assets/scripts/WeatherScript.cs'
 -r:'/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/System.Runtime.Serialization.dll'
