@@ -1,10 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class FlightData : MonoBehaviour
 {
 	string urlEndpointResponse = "http://api.sandbox.amadeus.com/v1.2/flights/low-fare-search?origin=IST&destination=BOS&departure_date=2016-10-15&return_date=2016-10-21&number_of_results=3&apikey=82MJopwOHjYA7vlW0eywE06KFRqGXdfZ";
-
+	string totalPrice = "";
+	string initialAirport = "";
+	string initialTerminal = "";
+	string outboundDateTime = "";
+	string inboundDateTime = "";
 	// Use this for initialization
 	void Start ()
 	{
@@ -19,12 +24,15 @@ public class FlightData : MonoBehaviour
 		// check for errors
 		if (www.error == null)
 		{
-			Debug.Log ("asdf" + www.text);
+
 			JSONObject data = new JSONObject (www.text);
-			Debug.Log (data);
-//			string weather = data.GetField ("weather") [0].GetField ("main").ToString();
-//			string temperature = data.GetField("main").GetField("temp").ToString();
-//			weatherText.text = weather + " | " + temperature;
+//			Debug.Log (data);
+
+			totalPrice = data.GetField ("results")[0].GetField ("fare").GetField ("total_price").ToString();
+			initialAirport = data.GetField ("results")[0].GetField ("itineraries")[0].GetField ("outbound").GetField ("flights")[0].GetField ("origin").GetField("airport").ToString();
+			initialTerminal = data.GetField ("results")[0].GetField ("itineraries")[0].GetField ("outbound").GetField ("flights")[0].GetField ("origin").GetField("terminal").ToString();
+			outboundDateTime = data.GetField ("results")[0].GetField ("itineraries")[0].GetField ("outbound").GetField ("flights")[0].GetField ("departs_at").ToString();
+			inboundDateTime = data.GetField ("results")[0].GetField ("itineraries")[0].GetField ("inbound").GetField ("flights")[0].GetField ("departs_at").ToString();
 
 		} else {
 			Debug.Log("WWW Error: "+ www.error);
