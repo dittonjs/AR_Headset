@@ -11,8 +11,16 @@ public class UIStateScript : MonoBehaviour {
 				UIStateScript.uiState = "SECOND";
 				Debug.Log (UIStateScript.uiState);
 				break;
-			case "SECOND":
-				UIStateScript.uiState = "THIRD";
+			case "THIRD":
+				UIStateScript.uiState = "MAIN";
+				Debug.Log (UIStateScript.uiState);
+				break;
+			case "FLIGHT2":
+				UIStateScript.uiState = "SPEECH";
+				Debug.Log (UIStateScript.uiState);
+				break;
+			case "FLIGHT3":
+				UIStateScript.uiState = "FLIGHT2";
 				Debug.Log (UIStateScript.uiState);
 				break;
 			default:
@@ -25,21 +33,74 @@ public class UIStateScript : MonoBehaviour {
 				UIStateScript.uiState = "MAIN";
 				Debug.Log (UIStateScript.uiState);
 				break;
-			case "THIRD":
-				UIStateScript.uiState = "SECOND";
+			case "MAIN":
+				UIStateScript.uiState = "THIRD";
 				Debug.Log (UIStateScript.uiState);
 				break;
+			case "HOTEL2":
+				UIStateScript.uiState = "MAIN";
+				Debug.Log (UIStateScript.uiState);
+				break;
+			case "HOTEL3":
+				UIStateScript.uiState = "MAIN";
+				Debug.Log (UIStateScript.uiState);
+				break;
+			case "SPEECH":
+				UIStateScript.uiState = "FLIGHT2";
+				Debug.Log (UIStateScript.uiState);
+				break;
+			case "FLIGHT2":
+				UIStateScript.uiState = "FLIGHT3";
+				Debug.Log (UIStateScript.uiState);
+				break;
+			
 			default:
 				break;
 			}
 		}
 		if (Input.GetKeyDown (KeyCode.UpArrow)) {
-			UIStateScript.uiState = "SPEECH";
-			Debug.Log (UIStateScript.uiState);
+			switch (UIStateScript.uiState) {
+				case "MAIN":
+					UIStateScript.uiState = "SPEECH";
+					Debug.Log (UIStateScript.uiState);
+					break;
+				case "HOTEL2":
+					UIStateScript.uiState = "SECOND";
+					Debug.Log (UIStateScript.uiState);
+					break;
+				case "HOTEL3":
+					UIStateScript.uiState = "HOTEL2";
+					Debug.Log (UIStateScript.uiState);
+					break;
+				default:
+					break;
+			}
 		}
 		if (Input.GetKeyDown (KeyCode.DownArrow)) {
-			UIStateScript.uiState = "MAIN";
-			Debug.Log (UIStateScript.uiState);
+			switch (UIStateScript.uiState) {
+			case "SPEECH":
+				UIStateScript.uiState = "MAIN";
+				Debug.Log (UIStateScript.uiState);
+				break;
+			case "SECOND":
+				UIStateScript.uiState = "HOTEL2";
+				Debug.Log (UIStateScript.uiState);
+				break;
+			case "HOTEL2":
+				UIStateScript.uiState = "HOTEL3";
+				Debug.Log (UIStateScript.uiState);
+				break;
+			case "FLIGHT2":
+				UIStateScript.uiState = "MAIN";
+				Debug.Log (UIStateScript.uiState);
+				break;
+			case "FLIGHT3":
+				UIStateScript.uiState = "MAIN";
+				Debug.Log (UIStateScript.uiState);
+				break;
+			default:
+				break;
+			}
 		}
 	}
 }

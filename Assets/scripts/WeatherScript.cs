@@ -12,16 +12,6 @@ public class WeatherScript : MonoBehaviour {
 		WWW www = new WWW(url);
 		StartCoroutine(WaitForRequest(www));
 	}
-	void Update(){
-		float y;
-		if (UIStateScript.uiState == "MAIN") {
-			y = -390f;
-
-		} else {
-			y = 2000f;
-		}
-		rect.anchoredPosition = new Vector2 (rect.anchoredPosition.x, y);
-	}
 
 	IEnumerator WaitForRequest(WWW www)
 	{

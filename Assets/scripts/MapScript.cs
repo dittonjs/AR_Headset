@@ -6,8 +6,8 @@ public class MapScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		float y;
-		if (UIStateScript.uiState == "MAIN") {
-			y = 0f;
+		if (UIStateScript.uiState == "THIRD") {
+			y = 1f;
 		} else {
 			y = 12f;
 		}
